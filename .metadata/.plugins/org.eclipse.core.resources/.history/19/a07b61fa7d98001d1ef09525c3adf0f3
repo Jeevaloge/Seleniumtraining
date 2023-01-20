@@ -1,0 +1,76 @@
+package org.stepdefinition;
+
+import org.Base.BaseClass;
+import org.sam.MyntraLoginPojo;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class MyntaLogin extends BaseClass {
+
+	MyntraLoginPojo m;
+
+	@Given("To launch the chrome browser and maximize window")
+	public void to_launch_the_chrome_browser_and_maximize_window() {
+		launchBrowser();
+		WindowMaximize();
+	}
+
+	@Given("To launch the url of the myntra application")
+	public void to_launch_the_url_of_the_myntra_application() {
+		launchUrl("");
+	}
+
+	@Given("To pass valid username in email field")
+	public void to_pass_valid_username_in_email_field() {
+		m = new MyntraLoginPojo();
+		passText("Jeevaloge086@gmail.com", m.getMblnumber());
+
+	}
+
+	@Given("To pass invalid password in password field")
+	public void to_pass_invalid_password_in_password_field() {
+		m = new MyntraLoginPojo();
+		passText("Jeevaloge@7", m.getPassword());
+	}
+
+	@Given("To click the login button")
+	public void to_click_the_login_button() {
+		m = new MyntraLoginPojo();
+		clickBtn(m.getLoginBtn());
+
+	}
+
+	@Given("To click on search label")
+	public void to_click_on_search_label() {
+		m = new MyntraLoginPojo();
+		
+	}
+
+	@Given("To search T-shirt product")
+	public void to_search_T_shirt_product() {
+		m = new MyntraLoginPojo();
+	}
+
+	@Given("To select the {int}st product")
+	public void to_select_the_st_product(Integer int1) {
+		m = new MyntraLoginPojo();
+	}
+
+	@Given("To close the current tab")
+	public void to_close_the_current_tab() {
+
+	}
+
+	@When("To click on bag icon")
+	public void to_click_on_bag_icon() {
+		m = new MyntraLoginPojo();
+	}
+
+	@Then("To take the screenshot")
+	public void to_take_the_screenshot() {
+		m = new MyntraLoginPojo();
+	}
+
+}

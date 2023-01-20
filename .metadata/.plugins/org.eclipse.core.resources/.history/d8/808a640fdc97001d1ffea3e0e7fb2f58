@@ -1,0 +1,43 @@
+package org.sam;
+
+
+import org.Base.BaseClass;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class FbloginPojo extends BaseClass {
+
+	public void Fbloginpojo() {
+		PageFactory.initElements(driver, this);
+	}
+
+	// private webelement
+	@FindAll({ @FindBy(xpath = "// input[@id='email']"), @FindBy(xpath = "// input[@name='email']"),
+			@FindBy(xpath = "// input[@data-testid='royal_email']")
+
+	})
+	private WebElement varRef;
+
+	@FindBy(xpath = "// input[@aria-label='Password']")
+	private WebElement password;
+
+	@FindBy(name = "login")
+	private WebElement loginBtn;
+
+	// getters to access the webelement outside the class
+
+	public WebElement getVarRef() {
+		return varRef;
+	}
+
+	public WebElement getPassword() {
+		return password;
+	}
+
+	public WebElement getLoginBtn() {
+		return loginBtn;
+	}
+
+}
